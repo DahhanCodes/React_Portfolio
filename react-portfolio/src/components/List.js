@@ -10,7 +10,7 @@ function List(props) {
             <h3 className='sectionTitle'>Front End Projects</h3>
             <div className='partition'>
                 <ul className="list-group">
-                    {props.feProjects.map(item => (
+                    {props.feprojects.map(item => (
                         <li className="list-group-item" key={item.id}>
                             {item.name}
                         </li>
@@ -20,7 +20,7 @@ function List(props) {
             <h3 className='sectionTitle'> Back End Projects</h3>
             <div className='partition'>
                 <ul className="list-group">
-                    {props.beProjects.map(item => (
+                    {props.beprojects.map(item => (
                         <li className="list-group-item" key={item.id}>
                             {item.name}
                         </li>
@@ -30,7 +30,7 @@ function List(props) {
             <h3 className='sectionTitle'> Full Stack Projects</h3>
             <div className='partition'>
                 <ul className="list-group">
-                    {props.fsProjects.map(item => (
+                    {props.fsprojects.map(item => (
                         <li className="list-group-item" key={item.id}>
                             {item.name}
                         </li>
