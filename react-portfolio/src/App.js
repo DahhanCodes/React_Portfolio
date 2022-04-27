@@ -1,118 +1,23 @@
 import React from 'react';
-import header from './components/header';
-import footer from './components/footer';
-import nav from './components/navigation';
-import List from './components/List';
-
-const head = {
-  id: 1,
-  name: 'header'
-}
-
-const headnav = [
-    {
-        id: 1,
-        name: 'About Me',
-     
-      },
-      {
-        id: 2,
-        name: 'My work',
-       
-      },
-      {
-        id: 3,
-        name: 'Contact Me',
-        
-      },
-      {
-        id: 4,
-        name: 'Resume',
-       
-      },
-]
-const feprojects = [
-  {
-    id: 1,
-    name: 'RunBuddy',
-     
-  },
-  {
-    id: 2,
-    name: 'DemoPortfolio',
-     
-  },
-  {
-    id: 3,
-    name: 'Password Generator',
-     
-  },
-  {
-    id: 4,
-    name: 'Coding quiz game',
-     
-  },
-  {
-    id: 5,
-    name: 'Crypto Maestro',
-     
-  }
-];
-const beprojects = [
-    {
-      id: 1,
-      name: 'ReadMe Generator',
-       
-    },
-    {
-      id: 2,
-      name: 'Portfolio Generator',
-       
-    },
-    {
-      id: 3,
-      name: 'Team Profile Generator',
-       
-    },
-    {
-      id: 4,
-      name: 'E-commerce Back End',
-       
-    },
-    {
-      id: 5,
-      name: 'Tech Blog',
-       
-    }
-  ];
-  const fsprojects = [
-    {
-      id: 1,
-      name: 'Note Taker',
-       
-    },
-    {
-      id: 2,
-      name: 'Pharmappoint',
-       
-    },
-    {
-      id: 3,
-      name: 'Team Profile Generator',
-       
-    },
-  
-  ];
+import './assets/css/style.css'
+import Header from './components/header';
+import Footer from './components/footer';
+import resume from './components/resume';
+import work from './components/work';
+import home from './homePage'
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
   <React.Fragment>
-      <header head={head}/>
-      <nav headnav= {headnav}/>
-      <List feprojects={feprojects} />
-      <List beprojects = {beprojects}/>
-      <List fsprojects = {fsprojects}/>
-      <footer />
+      <Header/>
+      <Switch>
+        <Route exact path="/"component={home}/>
+        <Route exact path="/AboutME"component={homePage}/>
+        <Route exact path="/MyWork"component={work}/>
+        <Route exact path="/MyResume"component={resume}/>
+      </Switch>
+      <Footer/>
 </React.Fragment>
   )
 }

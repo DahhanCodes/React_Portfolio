@@ -1,36 +1,34 @@
 import React from 'react';
-
-function header(props) {
-    console.log(props)
-    //will have to wrap the whole output in a single div, 
-    /////as there must be a singel parent.
-    //will create single divs to seperate between FE, BE, and FS projects.
+import {Nav, Navbar, Container} from 'react-bootstrap'
+function header() {
+    console.log()
     return (
-        <header>
-        <h1>
-        Welcome To My Portfolio! 
-        </h1>
-            <nav>
-              
-                <ul>
-                   
-                    <li>
-                        
-                        <a href="#about-me">About me</a>
-                    </li>
-                    <li>
-                        <a href="#education">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#projects">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#contact-me">Resume</a>
-                    </li>
-                </ul>
-            </nav>   
-    </header>
-    );
+        <Navbar bg="dark" expand="lg" fixed="top" className=""> 
+                    <Container >
+                        <Navbar.Brand to="./index" className=""> <img src={logo} alt="logo" className="img-fluid logo_img"/> </Navbar.Brand>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0">
+                            <Hamburger />
+                        </Navbar.Toggle>
+                        <Navbar.Collapse id="basic-navbar-nav " className=" flex-grow-0">
+                        <Nav variant="tabs" className="mr-auto ">
+                            
+                            <NavLink exact to="./" activeClassName="active" className="mx-md-3 nav-link mx-2 text-primary">
+                                <span>Home</span>
+                            </NavLink>
+                            <NavLink exact to="./AboutMe" activeClassName="active"  className="mx-md-3 nav-link mx-2 text-primary">
+                                <span> About Me</span>
+                            </NavLink>
+                            <NavLink exact to="./MyWork" activeClassName="active"  className="mx-md-3 nav-link mx-2 text-primary">
+                                <span>My Work</span> 
+                            </NavLink>
+                            <NavLink exact to="./MyResume" activeClassName="active"  className="mx-md-3 nav-link mx-2 text-primary"> 
+                                <span>My Resume</span> 
+                            </NavLink>
+                        </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                    </Navbar>
+    )
 }
 
 export default header;
