@@ -1,0 +1,135 @@
+/*removing browser dafaults styling*/
+/* the * acts as a select all*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body { 
+    color: #39a6b2;
+    font-family: Arial, Helvetica, sans-serif;
+     
+}
+
+header {
+    padding: 25px 30px;
+    background-color: #39a6b2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 3px solid yellow;
+}
+header h1{
+    font-weight: bold;
+    font-size: 45px;
+    color: white;
+}
+header nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 50%;
+   
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    }
+header ul li{
+    display: flex;
+    margin-right: 175px;
+    margin-left: 150px;
+}
+header ul li a{
+    color: #fce138;
+    font-weight: lighter;
+    font-size: 27px;
+}
+.container{
+    padding: 50px;
+    background-color: #023076;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid white;
+}
+.altCont{
+    padding: 50px;
+    background-color: #39a6b2;
+    display: flex;
+    flex-direction: column;
+}
+.meImage{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+    justify-content: flex-start;
+}
+#selfImage{
+    margin-right: 5%;
+	max-width: 300px;
+	max-height: 300px;
+}
+.meImage p{
+    display: flex;
+    flex: 25%;
+	padding: 0px 30px;
+    font-size: 20px;
+    color: #fce138;
+    align-self: right;
+    line-height: 1.5;
+    
+}
+.container h2{
+   
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    
+    margin-bottom: 40px;
+    text-decoration: underline rgb(146, 147, 170);
+}
+.container ul{
+    display: flex;
+    flex-direction: column;
+   align-items: left;
+   flex: 25%;
+    
+}
+.container ul li{
+    display: flex;
+    margin-bottom: 30px;
+    color: #fce138;
+    font-weight: lighter;
+    font-size: 27px;
+}
+.altCont h2{
+    text-decoration: underline rgb(0, 0, 0);
+}
+.altCont address{
+    color: white;
+}
+.wrapImages{
+    display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+    position: relative;
+}
+#projectImage{
+    max-height: 300px;
+    max-width: 300px;
+	flex: 20%;
+	margin-right: 5%;
+	margin-top: 20px;
+}
+.wrapImages span{
+    position: absolute;
+    bottom: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+}
