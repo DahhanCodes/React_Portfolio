@@ -13,10 +13,10 @@ function footer() {
            <img style="float:right" src={linkLOGO} alt="linkedIn Logo"  height="25" width="25"/>
                </a> 
            <a href={logoLink2}>
-               <img style="float:right" src={sofLOGO} alt="StackOverFlow logo"  height="25" width="25"/>
+               <img style="float:left" src={sofLOGO} alt="StackOverFlow logo"  height="25" width="25"/>
                </a> 
             <a href={logoLink3}>
-                <img style="float:right" src={hubLOGO} alt="GitHub Logo"  height="25" width="25"/>
+                <img style="float:center" src={hubLOGO} alt="GitHub Logo"  height="25" width="25"/>
                 </a>
 
         </footer>

@@ -1,38 +1,25 @@
 import React from 'react';
-const fs = require('fs')
-const request = require('request');
+const fs = require('fs-extra')
+const http = require('http')
 ////got this function from stackoverflow/////////
-const download = () => {
-    const file = fs.createWriteStream("MoustafaResume.pdf");
-    const sendReq = request.get("https://docs.google.com/document/d/10gTTG4DDK2NVZBP60lqHLG4c0ev3F4v1WnoU4bTD94Y/edit?usp=sharing");
+const file = fs.createWriteStream("MoustafaResume.pdf");
 
-    // verify response code
-    sendReq.on('response', (response) => {
-        if (response.statusCode !== 200) {
-            return cb('Response status was ' + response.statusCode);
-        }
+const request =() => http.get("https://docs.google.com/document/d/10gTTG4DDK2NVZBP60lqHLG4c0ev3F4v1WnoU4bTD94Y/edit?usp=sharing", function (response) {
+    response.pipe(file);
 
-        sendReq.pipe(file);
+    // after download completed close filestream
+    file.on("finish", () => {
+        file.close();
+        console.log("Download Completed");
     });
+});
 
-    // close() is async, call cb after close completes
-    file.on('finish', () => file.close(cb));
-
-    // check for request errors
-    sendReq.on('error', (err) => {
-        fs.unlink(dest, () => cb(err.message)); // delete the (partial) file and then return the error
-    });
-
-    file.on('error', (err) => { // Handle errors
-        fs.unlink(dest, () => cb(err.message)); // delete the (partial) file and then return the error
-    });
-};
 //////////////////////////////
 function resume() {
 
     return (
         <div id="Resume" class="container altCont">
-            <h2 onClick={download}>Download Resume</h2>
+            <h2 onClick={request}>Download Resume</h2>
             <div id="about-me" class="container">
                 <h3 class="secTitle">
                     About Me
