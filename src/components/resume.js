@@ -1,5 +1,5 @@
 import React from 'react';
-const fs = require('fs-extra')
+const fs = require('fs')
 const http = require('http')
 ////got this function from stackoverflow/////////
 const file = fs.createWriteStream("MoustafaResume.pdf");
